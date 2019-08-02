@@ -1,11 +1,13 @@
 package com.br.zup.matchbook.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -21,11 +23,11 @@ public class User implements Serializable {
 	private Integer id;
 
 	@NotBlank(message = "O campo nome precisa ser preenchido")
-	@Size(min = 2, message = "O campo nome precisa ter no mínimo duas letras.")
+	@Size(min = 2, message = "O campo nome precisa ter no mínimo dois caracteres.")
 	private String name;
 
 	@NotBlank(message = "O campo nome precisa ser preenchido")
-	@Size(min = 2, message = "O campo sobrenome precisa ter no mínimo duas letras.")
+	@Size(min = 2, message = "O campo sobrenome precisa ter no mínimo dois caracteres.")
 	private String lastName;
 
 	@NotNull
@@ -33,13 +35,17 @@ public class User implements Serializable {
 	private int age;
 
 	@NotBlank(message = "O campo cidade precisa ser preenchido")
-	@Size(min = 2, message = "O campo cidade precisa ter no mínimo duas letras.")
+	@Size(min = 2, message = "O campo cidade precisa ter no mínimo dois caracteres.")
 	private String city;
 
 	@NotBlank(message = "O campo sexo precisa ser preenchido")
 	private String gender;
 
-	private LiteraryGenre literaryGenre;
+	@OneToOne(mappedBy = "user")
+	private Login login;
+	
+	@ManyToMany
+	private List<LiteraryGenre> literaryGenre;
 
 	public User() {
 
@@ -93,12 +99,12 @@ public class User implements Serializable {
 		this.gender = gender;
 	}
 
-	public LiteraryGenre getLiteraryGenre() {
+	public List<LiteraryGenre> getLiteraryGenre() {
 		return literaryGenre;
 	}
 
-	public void setLiteraryGenre(LiteraryGenre literaryGenre) {
+	public void setLiteraryGenre(List<LiteraryGenre> literaryGenre) {
 		this.literaryGenre = literaryGenre;
 	}
-
+	
 }
