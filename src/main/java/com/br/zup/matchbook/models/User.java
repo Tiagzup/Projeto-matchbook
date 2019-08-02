@@ -20,24 +20,23 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@NotBlank
-	@Size(min = 2, message = "O nome não pode ficar em branco.")
+	@NotBlank(message = "O campo nome precisa ser preenchido")
+	@Size(min = 2, message = "O campo nome precisa ter no mínimo duas letras.")
 	private String name;
 
-	@NotBlank
-	@Size(min = 2, message = "O Sobrenome não pode ficar em branco.")
+	@NotBlank(message = "O campo nome precisa ser preenchido")
+	@Size(min = 2, message = "O campo sobrenome precisa ter no mínimo duas letras.")
 	private String lastName;
 
-	@NotNull(message = "O campo idade não pode estar em branco")
+	@NotNull
 	@Min(value = 18, message = "Menores de 18 anos não podem utilizar o Mathbook.")
 	private int age;
 
-	@NotBlank
-	@Size(min = 2, message = "A cidade não pode ficar em branco.")
+	@NotBlank(message = "O campo cidade precisa ser preenchido")
+	@Size(min = 2, message = "O campo cidade precisa ter no mínimo duas letras.")
 	private String city;
 
-	@NotBlank
-	@Size(min = 2, message = "O sexo não pode ficar em branco.")
+	@NotBlank(message = "O campo sexo precisa ser preenchido")
 	private String gender;
 
 	private LiteraryGenre literaryGenre;
