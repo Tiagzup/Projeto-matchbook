@@ -9,19 +9,19 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class GenerosLiterarios implements Serializable {
+public class LiteraryGenre implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@NotNull(message = "o nome é um campo obrigatorio")
-	private String nome;
+	@NotNull(message = "O nome é um campo obrigatório.")
+	private String name;
 
-	private Usuario usuario;
+	private User user;
 	
-	public GenerosLiterarios() {
+	public LiteraryGenre() {
 		
 	}
 
@@ -33,20 +33,20 @@ public class GenerosLiterarios implements Serializable {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public User getUser() {
+		return user;
 	}
 	
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 }
