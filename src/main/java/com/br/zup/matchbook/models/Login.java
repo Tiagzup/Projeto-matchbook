@@ -2,13 +2,14 @@ package com.br.zup.matchbook.models;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -31,6 +32,7 @@ public class Login implements Serializable {
 	@Size(min = 6, message = "Sua senha precisa ter no mínimo seis caracteres")
 	private String password;
 
+	@OneToOne(cascade = {CascadeType.ALL})
 	private User user;
 
 	public Login() {
