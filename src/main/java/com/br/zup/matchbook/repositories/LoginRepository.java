@@ -9,5 +9,6 @@ import com.br.zup.matchbook.models.Login;
 
 @Repository
 public interface LoginRepository extends CrudRepository<Login, Integer>{
-	Optional<Login> findByNickAndPass (String nickname, String password);
+
+	Optional<Login> findByNicknameAndPassword (String nickname, String password);
 }
