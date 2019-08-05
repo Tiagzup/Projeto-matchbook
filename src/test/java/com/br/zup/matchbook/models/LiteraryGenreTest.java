@@ -14,9 +14,8 @@ public class LiteraryGenreTest {
 	public void preparar () {
 		literaryGenre = new LiteraryGenre();
 		
-		literaryGenre.getId();
+
 		literaryGenre.setId(null);
-		literaryGenre.getName();
 		literaryGenre.setName("Terror");
 	
 	}

@@ -15,13 +15,10 @@ public class LoginTest {
 	public void preparar () {
 		login = new Login();
 		
-		login.getId();
+	
 		login.setId(null);
-		login.getNickname();
 		login.setNickname("Robô");
-		login.getEmail();
 		login.setEmail("Robo@zup.com.be");
-		login.getPassword();
 		login.setPassword("123456");
 	}
 	@Test

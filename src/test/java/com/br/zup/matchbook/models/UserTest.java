@@ -14,17 +14,11 @@ public class UserTest {
 	public void prepare () {
 		user = new User ();
 		
-		user.getId();
 		user.setId(null);
-		user.getName();
 		user.setName("Zeca");
-		user.getLastName();
 		user.setLastName("Urubu");
-		user.getAge();
 		user.setAge(33);
-		user.getCity();
 		user.setCity("Rio de Janeiro");
-		user.getGender();
 		user.setGender("Masculino");
 		
 	}
