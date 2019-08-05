@@ -12,7 +12,8 @@ public class LoginService {
 	@Autowired
 	private LoginRepository loginRepository;
 
-	public String registerLogin(User user, Login login) {
+	
+	public String registerLogin (User user, Login login) {
 		login.setUser(user);
 		loginRepository.save(login);
 		return "Login cadastrado";
