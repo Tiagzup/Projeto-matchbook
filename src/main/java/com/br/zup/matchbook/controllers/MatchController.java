@@ -6,20 +6,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MatchController {
- 
 
 	@GetMapping("/")
 	public ModelAndView displayHomePage() {
 		ModelAndView modelAndView = new ModelAndView("home.html");
 		return modelAndView;
 	}
-	
+
 	@GetMapping("/login")
 	public ModelAndView displayLoginPage() {
-		ModelAndView modelAndView = new ModelAndView("Login.html");
-		return modelAndView;	
+		ModelAndView modelAndView = new ModelAndView("login.html");
+		return modelAndView;
 	}
-	
-	
-	
+
 }
