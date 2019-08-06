@@ -27,7 +27,6 @@ public class MatchController {
 	@Autowired
 	private UserService userService;
 
-
 	@GetMapping("/")
 	public ModelAndView displayHomePage() {
 		ModelAndView modelAndView = new ModelAndView("home.html");
@@ -52,13 +51,14 @@ public class MatchController {
 			BindingResult bindingUser) {
 		ModelAndView modelAndView = new ModelAndView("register.html");
 
-		if (bindingLogin.hasErrors()  || bindingUser.hasErrors()) {
+		if (bindingLogin.hasErrors() || bindingUser.hasErrors()) {
 			List<String> erros = new ArrayList<String>();
 			for (ObjectError objectError : bindingLogin.getAllErrors()) {
 				erros.add(objectError.getDefaultMessage());
 				modelAndView.addObject("login", loginService);
 				modelAndView.addObject("erros", erros);
-			}	for (ObjectError objectError : bindingUser.getAllErrors()) {
+			}
+			for (ObjectError objectError : bindingUser.getAllErrors()) {
 				erros.add(objectError.getDefaultMessage());
 				modelAndView.addObject("user", userService);
 				modelAndView.addObject("erros", erros);
@@ -69,8 +69,7 @@ public class MatchController {
 			modelAndView.addObject("users", userService.showAllUsers());
 
 		}
-		
+
 		return modelAndView;
 	}
 }
-
