@@ -11,20 +11,24 @@ import com.br.zup.matchbook.repositories.LoginRepository;
 public class LoginService {
 	@Autowired
 	private LoginRepository loginRepository;
-	
+
 	
 	public String registerLogin (User user, Login login) {
 		login.setUser(user);
 		loginRepository.save(login);
 		return "Login cadastrado";
 	}
-	public void updateLogin (Login login) {
+
+	public void updateLogin(Login login) {
 		loginRepository.save(login);
 	}
-	public void deleteLogin (Login login) {
+
+	public void deleteLogin(Login login) {
 		loginRepository.delete(login);
 	}
-	public Login findByNickAndPass (Login login) {
-		return loginRepository.findByNickAndPass(login.getNickname(), login.getPassword()).get();
+
+	public Login findByNickAndPass(Login login) {
+
+		return loginRepository.findByNicknameAndPassword(login.getNickname(), login.getPassword()).get();
 	}
 }
